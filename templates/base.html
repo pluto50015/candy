@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %}ホーム - Locomotive Scroll{% endblock %}</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body data-scroll-container>
+    <!-- 🚀 ヘッダー（スクロールで固定される）
+    <header id="header" class="header">
+        <nav>
+            <a href="{{ url_for('index') }}">ホーム</a>
+            <a href="{{ url_for('about') }}">会社概要</a>
+            <a href="{{ url_for('contact') }}">お問い合わせ</a>
+        </nav>
+    </header>-->
+
+    <header data-module-header="m17">
+      <div class="c-header" data-header="header">
+        <img href="/" class="c-header_logo_img" src="{{ url_for('static', filename='image/cartoon_candy_logo2.jpg') }}" alt="Logo">
+        <!--<span class="c-header_logo_inner" data-hover-shuffle="" style="">CANDY</span>-->
+        <!--<span aria-hidden="true" class="c-header_icon"></span>-->
+        <nav class="c-header_menu || c-header-menu">
+          <ul class="c-header-menu_list">
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">Work</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">About</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">Contact</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a target="_blank" rel="noopener noreferrer" href="" class="c-header-menu_link" data-hover-shuffle="" style="">Store</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="c-header_menu-toggler" data-header="menu-toggler" data-header-open-label="Menu" data-header-close-label="Close" aria-expanded="false" aria-controls="mobile-menu" aria-label="Navigation mobile">
+          Menu
+        </button>
+      </div>
+      <nav class="c-menu" data-header="menu" id="mobile-menu" aria-label="Navigation mobile">
+        <div class="c-menu_inner">
+          <ul class="c-menu_nav">
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">Work</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">About</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">Contact</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a class="c-menu_nav_link" target="_blank" rel="noopener noreferrer" href="">Store</a>
+        </li>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 🚀 Locomotive Scroll コンテナ -->
+      <div data-scroll-container>
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+
+    <!-- 🚀 固定フッター -->
+    <footer class="fixed-footer">
+        <p>&copy; 2025 CANDY. All rights reserved.</p>
+    </footer>
+
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous">
+    </script>
+    <script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous">
+    </script>
+    <script src="/static/scripts/main.js"></script>
+    <script src="{{ url_for('static', filename='js/locomotive-scroll.min.js') }}">
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}">
+    </script>
+  </body>
+</html>

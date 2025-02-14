@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html lang="ja">
+<html class="is-smooth-scroll-compatible is-loaded is-ready has-scroll-init has-scroll-smooth" lang="en" data-scroll-direction="vertical" data-direction="up">
+  <head>
+    <meta charset="utf-8">
+      <title>Locomotive Scroll | Detection of elements in viewport & smooth scrolling with parallax effects.</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <meta name="theme-color" content="#ffffff">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <link rel="manifest" href="site.webmanifest">
+
+      <link rel="apple-touch-icon" sizes="152x152" href="dist/images/favicons/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="dist/images/favicons/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="dist/images/favicons/favicon-16x16.png">
+      <link rel="mask-icon" href="dist/images/favicons/safari-pinned-tab.svg" color="#000000">
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144274538-1">
+      </script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'UA-144274538-1');
+
+      </script>
+      {% block title %}ホーム - Locomotive Scroll{% endblock %}
+  </head>
+  <body>
+    {% block content %}
+      <div class="o-scroll" id="js-scroll" data-scroll-container>
+        <section data-scroll-section>
+
+          <div class="o-container">
+            <div class="c-header1" id="header">
+
+              <div class="o-image1_wrapper">
+                <!--
+                <div class="o-image1" data-scroll data-scroll-speed="3" data-scroll-position="top">
+                    <img class="c-speed-block_image1" src="{{ url_for('static', filename='image/CANDY_WOLF_ICON.jpg') }}" alt="Locomotive image from unsplash">
+                </div>
+              </div>
+            -->
+              <h1 class="c-header_title o-h1" data-scroll>
+                <span class="c-header_title_line">
+                  <span data-scroll data-scroll-speed="3" data-scroll-position="top"> </span>
+                </span>
+                <span class="c-header_title_line">
+                  <span data-scroll data-scroll-speed="2" data-scroll-position="top"> </span>
+                </span>
+                <span class="c-header_title_line -version u-white">
+                  <span class="o-h1" data-scroll data-scroll-speed="3" data-scroll-position="top" data-scroll-delay="0.05">C</span>
+                  <span class="o-h1" data-scroll data-scroll-speed="5" data-scroll-position="top" data-scroll-delay="0.05">A</span>
+                  <span class="o-h1" data-scroll data-scroll-speed="2" data-scroll-position="top" data-scroll-delay="0.05">N</span>
+                  <span class="o-h1" data-scroll data-scroll-speed="4" data-scroll-position="top" data-scroll-delay="0.05">D</span>
+                  <span class="o-h1" data-scroll data-scroll-speed="6" data-scroll-position="top" data-scroll-delay="0.05">Y</span>
+                </span>
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <section data-scroll-section>
+          <div class="o-container">
+            <div class="c-summary" data-scroll>
+              <div class="o-layout -gutter">
+                <div class="o-layout_item u-2/5@from-medium">
+                  <p class="c-summary_text">
+                      We are an apparel store with the concept of undervaluing the world. Would you like to <em>underestimate the world</em> with us?
+                  </p>
+                </div>
+                <div class="o-layout_item u-3/5@from-medium">
+                  <ul class="c-summary_list">
+                    <li class="c-summary_list_item u-label" data-scroll>
+                      <a href="#speed-control" data-scroll-to>
+                          01. Goods
+                          <span class="c-summary_list_icon u-icon">
+                              ↓
+                          </span>
+                      </a>
+                    </li>
+                    <li class="c-summary_list_item u-label" data-scroll>
+                      <a href="#scroll-direction" data-scroll-to>
+                          02. New arrival
+                          <span class="c-summary_list_icon u-icon">
+                              ↓
+                          </span>
+                      </a>
+                    </li>
+                    <li class="c-summary_list_item u-label" data-scroll>
+                      <a href="#lerp-effect" data-scroll-to>
+                          03. News
+                          <span class="c-summary_list_icon u-icon">
+                              ↓
+                          </span>
+                      </a>
+                    </li>
+                    <li class="c-summary_list_item u-label" data-scroll>
+                      <a href="#fixed-elements" data-scroll-to>
+                        04. Contact
+                        <span class="c-summary_list_icon u-icon">
+                            ↓
+                        </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-section" data-scroll-section>
+          <div class="o-container" id="speed-control">
+            <div class="o-layout -gutter">
+              <div class="o-layout_item u-2/5@from-medium">
+                <div class="c-section_infos -padding" data-scroll data-scroll-speed="-2" data-scroll-call="test">
+                  <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                    <h3>
+                        01. <br>
+                        Goods
+                    </h3>
+                    <div class="c-sections_infos_text u-text">
+                      <p>
+                          Each element can be animated at a different speed. You get to choo-choo-choose!
+                      </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-layout_item u-3/5@from-medium">
+              <div class="c-speed-block" data-scroll data-scroll-speed="2">
+                <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                  <div class="o-image" data-scroll>
+                    <img class="c-speed-block_image" src="{{ url_for('static', filename='image/黒T_WOLF.jpg') }}" alt="goods1">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-layout -gutter -bottom">
+              <div class="o-layout_item u-2/5@from-medium">
+                <div class="c-speed-block" data-scroll data-scroll-speed="4">
+                  <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                    <div class="o-image" data-scroll data-scroll-speed="-1.5">
+                      <img class="c-speed-block_image" src="{{ url_for('static', filename='image/Tote_logo.jpg') }}" alt="goods2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="o-layout u-text-right">
+              <div class="o-layout_item u-1/2@from-medium">
+                <div class="c-speed-block -margin" data-scroll data-scroll-speed="6">
+                  <div class="o-image_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                    <div class="o-image" data-scroll data-scroll-speed="-2">
+                      <img class="c-speed-block_image" src="{{ url_for('static', filename='image/logo_T.jpg') }}" alt="goods3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-section" data-scroll-section>
+          <div class="o-container" id="scroll-direction">
+            <div class="c-direction-block_wrapper">
+              <div class="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#scroll-direction">
+                <div class="c-section_infos_inner" data-scroll>
+                  <h3>
+                    02. <br>
+                    New Arrival
+                  </h3>
+                  <div class="c-sections_infos_text u-text">
+                    <p>
+                      It's a new product! Isn't it cute? We won't show you too much!
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="c-direction-block" id="direction">
+                <div class="c-direction-block_item -one">
+                  <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="6" data-scroll-target="#direction">
+                    T-shirt, Foodie and Pants
+                  </span>
+                </div>
+                <div class="c-direction-block_item -two">
+                  <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8" data-scroll-target="#direction">
+                    Hat and Cap
+                  </span>
+                </div>
+                <div class="c-direction-block_item -three">
+                  <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="9" data-scroll-target="#direction" data-scroll-delay="0.05">
+                    Various small items
+                  </span>
+                </div>
+                <div class="c-direction-block_item -four">
+                  <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="15" data-scroll-target="#direction">
+                      There's a lot you can wish for!
+                  </span>
+                </div>
+                <div class="c-direction-block_item -five">
+                    <span class="c-direction-block_item_inner" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-20" data-scroll-target="#direction" data-scroll-delay="0.05">
+                        Ok, enough!!!!
+                    </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-section" data-scroll-section>
+          <div class="o-container" id="lerp-effect">
+            <div class="o-layout">
+              <div class="o-layout_item u-2/5@from-medium">
+                <div class="c-section_infos" data-scroll>
+                  <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                    <h3>
+                        03. <br>
+                        News
+                    </h3>
+                    <div class="c-sections_infos_text u-text">
+                      <p>
+                        We do a lot of different projects!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="o-layout_item u-3/5@from-medium">
+                <div class="c-lerp-block">
+                  <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.2" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                    01
+                  </span>
+                  <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.6" data-scroll-speed="6">
+                    <span>
+                        LIVE
+                    </span>
+                  </span>
+                </div>
+                <div class="c-lerp-block">
+                  <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.06" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                      02
+                  </span>
+                  <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.1" data-scroll-speed="6">
+                      <span>
+                        Bo-Bo-Do
+                      </span>
+                  </span>
+                </div>
+                <div class="c-lerp-block">
+                  <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.06" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                      03
+                  </span>
+                  <span class="c-lerp-block_title" data-scroll>
+                    <span data-scroll data-scroll-delay="0.13" data-scroll-speed="6">C</span>
+                    <span data-scroll data-scroll-delay="0.12" data-scroll-speed="6">o</span>
+                    <span data-scroll data-scroll-delay="0.11" data-scroll-speed="6">l</span>
+                    <span data-scroll data-scroll-delay="0.1" data-scroll-speed="6">l</span>
+                    <span data-scroll data-scroll-delay="0.09" data-scroll-speed="6">a</span>
+                    <span data-scroll data-scroll-delay="0.08" data-scroll-speed="6">b</span>
+                    <span data-scroll data-scroll-delay="0.07" data-scroll-speed="6">o</span>
+                    <span data-scroll data-scroll-delay="0.06" data-scroll-speed="6">r</span>
+                    <span data-scroll data-scroll-delay="0.05" data-scroll-speed="6">a</span>
+                    <span data-scroll data-scroll-delay="0.04" data-scroll-speed="6">t</span>
+                    <span data-scroll data-scroll-delay="0.03" data-scroll-speed="6">i</span>
+                    <span data-scroll data-scroll-delay="0.04" data-scroll-speed="6">o</span>
+                    <span data-scroll data-scroll-delay="0.05" data-scroll-speed="6">n</span>
+                  </span>
+                </div>
+                <div class="c-lerp-block">
+                  <span class="c-lerp-block_index" data-scroll data-scroll-delay="0.03" data-scroll-speed="6" data-scroll-call="dynamicColor" data-scroll-repeat>
+                      04
+                  </span>
+                  <span class="c-lerp-block_title" data-scroll data-scroll-delay="0.04" data-scroll-speed="6">
+                    <span>
+                        And much more.
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="c-section -fixed" data-scroll-section data-persistent>
+          <div class="o-container" id="fixed-elements">
+            <div class="o-layout">
+              <div class="o-layout_item u-2/5@from-medium">
+                <div class="c-section_infos -padding" data-scroll data-scroll-sticky data-scroll-target="#fixed-elements">
+                  <div class="c-section_infos_inner" data-scroll data-scroll-offset="200">
+                    <h3>
+                        04. <br>
+                        CONTACT
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="c-cta_line -margin" data-scroll data-scroll-offset="100"/>
+          <div class="o-container">
+            <div class="c-cta">
+              <h1 class="o-title" data-scroll>
+                <span class="o-title_line">
+                  <span>If you have</span>
+                </span>
+                <span class="o-title_line">
+                  <span>any questions,</span>
+                </span>
+                <span class="o-title_line u-white">
+                  <span>just ask!</span>
+                </span>
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <section data-scroll-section>
+          <div class="o-container">
+            <div class="c-damn">
+              <h1 class="o-title" data-scroll>
+                <span class="o-title_line">
+                  <span>
+                      Thanks
+                  </span>
+                </span>
+                <span class="o-title_line">
+                  <span>
+                      for
+                  </span>
+                </span>
+                <span class="o-title_line">
+                  <span>
+                      looking
+                  </span>
+                </span>
+              </h1>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.6.0/polyfill.min.js" crossorigin="anonymous">
+      </script>
+      <script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous">
+      </script>
+      <script src="/static/scripts/main.js"></script>
+      <script src="{{ url_for('static', filename='js/locomotive-scroll.min.js') }}">
+      </script>
+      <script src="{{ url_for('static', filename='js/main.js') }}">
+      </script>
+    {% endblock %}
+  </body>
+</html>
+              <!--
+              <div class="o-layout_item u-3/5@from-medium">
+                <div class="c-fixed_wrapper" data-scroll data-scroll-call="dynamicBackground" data-scroll-repeat>
+                  <div class="c-fixed_target" id="fixed-target"></div>
+                  <div class="c-fixed" data-scroll data-scroll-sticky data-scroll-target="#fixed-target" style="background-image:url('dist/images/locomotive04.jpg')"></div>
+                </div>
+              </div>
+            -->
+
+
+
+          <!--
+          <section class="c-section" data-scroll-section>
+            <div class="o-container">
+                <div class="c-cta">
+                  <h1 class="o-title" data-scroll>
+                    <span class="o-title_line">
+                      <span>If you have</span>
+                    </span>
+                    <span class="o-title_line">
+                      <span>any questions,</span>
+                    </span>
+                    <span class="o-title_line u-white">
+                      <span>just ask!</span>
+                    </span>
+                  </h1>
+                    <hr class="c-cta_line" data-scroll data-scroll-offset="100"/>
+                          <div class="c-cta_content">
+                              <div class="o-layout -gutter">
+                                  <div class="o-layout_item u-2/5@from-medium">
+                                      <p class="u-label">
+                                          Github
+                                      </p>
+                                  </div>
+                                  <div class="o-layout_item u-3/5@from-medium">
+                                      <div class="c-cta_section">
+                                          <div class="c-cta_content_text" data-scroll data-scroll-offset="100">
+                                              <h3>Check out Locomotive Scroll</h3>
+                                              <p>
+                                                  This library has evolved considerably over the years. The architecture and conventions shift according to our projects.
+                                              </p>
+                                              <p>
+                                                  Visit the GitHub repository page for a complete introduction and list of available options. Search the GitHub issue tracker carefully to check if your issue/feature has already been reported/requested before opening a new issue or submitting a pull request.
+                                              </p>
+                                          </div>
+                                          <a class="c-cta_button o-button" href="https://github.com/locomotivemtl/locomotive-scroll" target="_blank" data-scroll data-scroll-offset="100">
+                                              <span class="o-button_icon">
+                                                  <svg role="img"><use xlink:href="dist/images/sprite.svg#github"></use></svg>
+                                              </span>
+                                              Check on Github
+                                              <span class="o-button_arrow u-icon">
+                                                  →
+                                              </span>
+                                          </a>
+                                      </div>
+                                      <hr class="c-cta_line -margin" data-scroll data-scroll-offset="100"/>
+                                      <div class="c-cta_section">
+                                          <div class="c-cta_content_text" data-scroll data-scroll-offset="100">
+                                              <h4>Neue Montreal <br>Pangram Pangram® Foundry</h4>
+                                              <p>
+                                                  You like the font used on this page? Well this is your lucky day. You can get it on <a class="o-link -underline" href="https://pangrampangram.com/" target="_blank">pangrampangram.com</a>! Thanks to our good friend Mathieu Desjardins ❤️
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+
+              <section data-scroll-section>
+                  <div class="c-choochoo">
+                      <div class="c-choochoo_item u-text-center" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10">
+                          <span>
+                              🚂
+                          </span>
+                      </div>
+                      <div class="c-choochoo_item u-text-center -reverse" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-10">
+                          <span>
+                              🚂
+                          </span>
+                      </div>
+                  </div>
+              </section>
+            -->
