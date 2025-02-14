@@ -3,11 +3,10 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>{% block title %}ホーム - Locomotive Scroll{% endblock %}</title>
+      <title>{% block title %}candy.project{% endblock %}</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body data-scroll-container>
-
     <header data-module-header="m17">
       <div class="c-header" data-header="header">
         <img href="/" class="c-header_logo_img" src="{{ url_for('static', filename='image/cartoon_candy_logo2.jpg') }}" alt="Logo">
@@ -67,7 +66,7 @@
     </script>
     <script nomodule src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous">
     </script>
-    <script src="/static/scripts/main.js"></script>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/locomotive-scroll.min.js') }}">
     </script>
     <script src="{{ url_for('static', filename='js/main.js') }}">
