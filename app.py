@@ -1,7 +1,8 @@
 
 from flask import Flask, render_template, request, flash
 from flask_mail import Mail, Message
-from forms import ContactForm
+#from forms import ContactForm
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'  # セキュリティキ
@@ -21,7 +22,7 @@ mail = Mail(app)
 @app.route('/')
 def index():
     return render_template('index.html')
-
+"""
 @app.route('/about')
 def about():
     return render_template('about.html')
@@ -52,6 +53,12 @@ def contact():
     except Exception as e:
         print(f"エラー: {e}")  # エラーを表示
         return "メール送信失敗！", 500  # Internal Server Error
-
+"""
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.debug = True  # デバッグモード有効化
+    #app.run(debug=True)
+
+    #port = int(os.environ.get("PORT", 10000))
+    #app.run(host="0.0.0.0", port=port)0
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
