@@ -55,10 +55,10 @@ def contact():
         return "メール送信失敗！", 500  # Internal Server Error
 """
 if __name__ == '__main__':
-    #app.debug = True  # デバッグモード有効化
-    #app.run(debug=True)
+    app.debug = True  # デバッグモード有効化
+    app.run(debug=True)
 
     #port = int(os.environ.get("PORT", 10000))
     #app.run(host="0.0.0.0", port=port)0
-    port = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=port)
+    #port = int(os.environ.get("PORT", 8000))
+    #app.run(host="0.0.0.0", port=port)
