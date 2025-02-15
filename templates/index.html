@@ -29,6 +29,48 @@
   </head>
 
   <body>
+
+    <header data-module-header="m17">
+      <div class="c-header" data-header="header">
+        <img class="c-header_logo_img" src="{{ url_for('static', filename='image/cartoon_candy_logo2.jpg') }}" alt="Logo">
+        <nav class="c-header_menu || c-header-menu">
+          <ul class="c-header-menu_list">
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">Work</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">About</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a href="" class="c-header-menu_link" data-hover-shuffle="" style="">Contact</a>
+            </li>
+            <li class="c-header-menu_item">
+              <a target="_blank" rel="noopener noreferrer" href="" class="c-header-menu_link" data-hover-shuffle="" style="">Store</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="c-header_menu-toggler" data-header="menu-toggler" data-header-open-label="Menu" data-header-close-label="Close" aria-expanded="false" aria-controls="mobile-menu" aria-label="Navigation mobile">
+          Menu
+        </button>
+      </div>
+      <nav class="c-menu" data-header="menu" id="mobile-menu" aria-label="Navigation mobile">
+        <div class="c-menu_inner">
+          <ul class="c-menu_nav">
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">Work</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">About</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a href="" class="c-menu_nav_link ">Contact</a>
+        </li>
+        <li class="c-menu_nav_item">
+          <a class="c-menu_nav_link" target="_blank" rel="noopener noreferrer" href="">Store</a>
+        </li>
+      </nav>
+    </header>
+
     {% block content %}
       <div class="o-scroll" id="js-scroll" data-scroll-container>
 
